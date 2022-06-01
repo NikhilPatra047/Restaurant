@@ -1,15 +1,20 @@
 import { Card, Button } from "react-bootstrap";
 
-function CardComponent() {
+function CardComponent({ value }) {
+    const { key, title, cost, desc } = value;
+
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem', border: "0.5px solid black"}}>
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{title}</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                    {desc}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+
+                <Card.Text>
+                    <strong>Price: Rs {cost}</strong>
+                </Card.Text>
+                <Button variant="primary">Order Now</Button>
             </Card.Body>
         </Card>
     );
