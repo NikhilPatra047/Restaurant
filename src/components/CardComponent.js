@@ -2,12 +2,12 @@ import { Card, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
 function CardComponent({ value }) {
-    const { title, cost, desc } = value;
+    const { key, title, cost, desc } = value;
 
     const navigate = useNavigate();
 
     const handleRoute = () => {
-        navigate("/current-order", {state: title}, { replace: false });
+        navigate("/current-order", {state: {title: title, cost: cost, id: key}}, { replace: false });
     };
 
     return (
