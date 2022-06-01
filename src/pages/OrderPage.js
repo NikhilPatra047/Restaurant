@@ -6,13 +6,13 @@ function OrderPage() {
     return (
         <>
             <NavbarComponent />
-            <div style={{display: "flex", flexDirection: "row", alignItems: "flex-end", justifyContent: "space-evenly", boxSizing: "border-box"}}>
-                <div className="row">
+            <div className="container-fluid">
+                <div className="d-flex flex-row flex-wrap row row-eq-height align-items-end justify-content-around">
                     {data.map((item) => {
-                        const { id, foodTitle, price } = item;
+                        const { id, foodTitle, price, description } = item;
                         return (
                             <div className="col" style={{marginTop: "2em"}}>
-                                <CardComponent value={{ key: id, title: foodTitle, cost: price }} />
+                                <CardComponent value={{ key: id, title: foodTitle, cost: price, desc: description }} />
                             </div>
                         );
                     })};
@@ -21,5 +21,7 @@ function OrderPage() {
         </>
     );
 };
+
+
 
 export default OrderPage;
